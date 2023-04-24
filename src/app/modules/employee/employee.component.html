@@ -1,0 +1,55 @@
+<!-- <h1>Angular Http GET requet example</h1>
+<li *ngFor="let user of userInfo.data">
+  <span>{{user.first_name}} {{user.last_name}}</span>
+</li>
+ -->
+
+ <h1>Angular Http POST request example</h1>
+
+<div>
+
+<h2>Enter name and job</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="saveEmployeeTyped()">
+
+<input id="name" type="text" placeholder="Name" formControlName="name" />
+
+<br />
+
+<input id="job" type="text" placeholder="Job" formControlName="job" />
+
+<br />
+
+<button [disabled]="!employeeForm.valid" type="submit">
+
+Add Employee
+
+</button>
+
+</form>
+
+</div>
+
+<div>
+
+  <h2>List of Employees</h2>
+
+  <ng-container *ngFor="let employee of employees">
+
+    {{ employee.name }} - {{ employee.job }}<br />
+
+  </ng-container>
+
+</div>
+
+
+<div>
+  <h2>List of Typed Employees</h2>
+  <ng-container *ngFor="let employee of employeesTyped">
+    {{employee.name}} - {{employee.job}} - {{employee.id}} - {{employee.createdAt}}<br />
+  </ng-container>
+</div>
+
+
+
+
